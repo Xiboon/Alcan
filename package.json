@@ -1,0 +1,27 @@
+{
+  "name": "alcan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "dayjs": "^1.9.8",
+    "discord.js": "12.5.1",
+    "node-gyp": "^7.1.2",
+    "rethinkdb": "^2.4.2",
+    "statcord.js": "^3.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiboon/alcan.git"
+  },
+  "author": "",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/Xiboon/alcan/issues"
+  },
+  "homepage": "https://github.com/Xiboon/alcan#readme"
+}
