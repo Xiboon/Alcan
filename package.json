@@ -2,14 +2,16 @@
   "name": "alcan",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "dependencies": {
+    "@types/rethinkdb": "^2.3.16",
     "canvas": "^2.6.1",
     "dayjs": "^1.9.8",
-    "discord.js": "12.5.1",
+    "discord.js": "^12.5.1",
     "node-gyp": "^7.1.2",
     "rethinkdb": "^2.4.2",
-    "statcord.js": "^3.1.4"
+    "statcord.js": "^3.1.4",
+    "typescript": "^4.2.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Xiboon/alcan/issues"
   },
-  "homepage": "https://github.com/Xiboon/alcan#readme"
+  "homepage": "https://github.com/Xiboon/alcan#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.33"
+  }
 }

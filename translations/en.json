@@ -1,109 +1,96 @@
 {
-  "8ball": {
-    "responses": [
-      "Yes",
-      "No",
-      "Maybe",
-      "Certainly",
-      "I'm not sure"
-    ]
-  },
-  "ban": {
-    "noreason": "No reason provided.",
-    "nouser": "You need to specify an user!",
-    "error1": "An error occured while running the command!",
-    "error2": "Check if the bot has required permission to ban this user",
-    "ban": "Banned:",
-    "ban2": "Banned by:",
-    "reason": "Reason:"
-  },
-"config": {
-  "notspecified": "You didn't specify what to set to",
-  "wrongchannel": "You gave the wrong channel",
-  "wronglang": "You picked an invalid language.",
-  "settings": [
-      "Prefix changed",
-      "Welcome channel changed",
-      "Goodbye channel changed",
-      "Welcome text changed",
-      "Goodbye text changed",
-      "Welcome status changed",
-      "Goodbye status changed",
-      "Guild language changed"
-],
-  "defaultt": {
-    "enabled": "Enabled",
-    "disabled": "Disabled",
-    "dscp": "Set with",
-    "ss": "Server settings",
-    "p": "Prefix - 1",
-    "w": "Welcome channel - 2",
-    "g": "Goodbye channel - 3",
-    "wt": "Welcome text - 4",
-    "gt": "Goodbye text - 5",
-    "we": "Welcome enabled - 6",
-    "ge": "Goodbye enabled - 7",
-    "lg": "Language - 8"
-  },
-  "changes": [
-    "From",
-    "to"
-  ]
-},
-  "help": {
-    "all": "All categories:",
-    "fun": "4Fun",
-    "tools": "Tools",
-    "mod": "Moderation",
-    "info": {
-      "cmdname": "Name:",
-      "dscp": "Description:",
-      "alias": "Aliases:",
-      "info": "Info about command",
-      "category": "Category:"
-    }
-  },
-  "kick":  {
-    "noperm": "I don't have permission to kick members!",
-    "noperson": "You didn't give a person to kick",
-    "noreason": "No reason provided",
-    "title": "Member has been kicked",
-    "kicked": "Kicked:",
-    "kb": "Kicked by:",
-    "reason": "Reason:",
-    "error": "An error occured"
-  },
-  "ping": "My ping is",
-"serverinfo": {
-  "title": "Server info",
-  "fields": [
-    "Server created at",
-    "Owner",
-    "Region",
-    "Member count",
-    "Channels count",
-    "Roles count",
-    "Vanity invite URL"
-  ]
-},
-"userinfo": {
-  "title": "Userinfo",
-  "fields": [
-    "Nickname",
-    "Account created at",
-    "Joined at"
-  ]
-},
-  "events": {
-    "message": {
-      "dscp": "Hi! I'm Alcan, a multi-functional Discord bot! \n My prefix on this guild is:",
-      "guilds": "Guilds",
-      "users": "Users",
-      "channels": "Channels",
-      "perms1": "You can't do that!",
-      "perms2": "You're missing the following permission:"
-    },
-    "guildMemberAdd": "Welcome",
-    "guildMemberRemove": "Goodbye"
-  }
+	"8ball": {
+		"responses": ["Yes", "No", "Maybe", "Certainly", "I'm not sure"]
+	},
+	"ban": {
+		"noreason": "No reason provided.",
+		"nouser": "You need to specify an user!",
+		"error1": "An error occured while running the command!",
+		"error2": "Check if the bot has required permission to ban this user",
+		"ban": "Banned:",
+		"ban2": "Banned by:",
+		"reason": "Reason:"
+	},
+	"config": {
+		"notspecified": "You didn't specify what to set to",
+		"wrongchannel": "You gave the wrong channel",
+		"wronglang": "You picked an invalid language.",
+		"settings": [
+			"Prefix changed",
+			"Welcome channel changed",
+			"Goodbye channel changed",
+			"Welcome text changed",
+			"Goodbye text changed",
+			"Welcome status changed",
+			"Goodbye status changed",
+			"Guild language changed"
+		],
+		"defaultt": {
+			"enabled": "Enabled",
+			"disabled": "Disabled",
+			"dscp": "Set with",
+			"ss": "Server settings",
+			"p": "Prefix - 1",
+			"w": "Welcome channel - 2",
+			"g": "Goodbye channel - 3",
+			"wt": "Welcome text - 4",
+			"gt": "Goodbye text - 5",
+			"we": "Welcome enabled - 6",
+			"ge": "Goodbye enabled - 7",
+			"lg": "Language - 8"
+		},
+		"changes": ["From", "to"]
+	},
+	"help": {
+		"all": "All categories:",
+		"fun": "4Fun",
+		"tools": "Tools",
+		"mod": "Moderation",
+		"info": {
+			"cmdname": "Name:",
+			"dscp": "Description:",
+			"alias": "Aliases:",
+			"info": "Info about command",
+			"category": "Category:"
+		}
+	},
+	"kick": {
+		"noperm": "I don't have permission to kick members!",
+		"noperson": "You didn't give a person to kick",
+		"noreason": "No reason provided",
+		"title": "Member has been kicked",
+		"kicked": "Kicked:",
+		"kb": "Kicked by:",
+		"reason": "Reason:",
+		"error": "An error occured"
+	},
+	"ping": "My ping is",
+	"serverinfo": {
+		"title": "Server info",
+		"fields": [
+			"Server created at",
+			"Owner",
+			"Region",
+			"Member count",
+			"Channels count",
+			"Roles count",
+			"Vanity invite URL"
+		]
+	},
+	"userinfo": {
+		"title": "Userinfo",
+		"fields": ["Nickname", "Account created at", "Joined at"]
+	},
+	"events": {
+		"message": {
+			"dscp": "Hi! I'm Alcan, a multi-functional Discord bot! \n My prefix on this guild is:",
+			"guilds": "Guilds",
+			"users": "Users",
+			"channels": "Channels",
+			"perms1": "You can't do that!",
+			"perms2": "You're missing the following permission:"
+		},
+		"guildMemberAdd": "Welcome",
+		"guildMemberRemove": "Goodbye"
+	}
 }
