@@ -2,4 +2,8 @@ node_modules/
 config.json
 .idea
 commands/test.js
+<<<<<<< Updated upstream
 dist/
+=======
+dist/
+>>>>>>> Stashed changes
