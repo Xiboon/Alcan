@@ -76,7 +76,8 @@ module.exports.run = (client: AlcanClient, message: Message, args: Array<string>
 
 		default:
 			if (!args[0]) return message.channel.send(embed);
-			let cmd = client.cmds.get(args[0]);
+			const cmd = client.cmds.get(args[0]);
+			if (!cmd) return;
 			if (message.guild.settings.lang === 'pl') {
 				cmd.help.description = cmd.help.descriptionpl;
 			}
