@@ -1,0 +1,96 @@
+{
+	"8ball": {
+		"responses": ["Tak", "Nie", "Możliwe", "Prawdopodobnie", "Nie jestem pewien"]
+	},
+	"ban": {
+		"noreason": "Nie podano powodu",
+		"nouser": "Musisz wybrać użytkownika!",
+		"error1": "Wystąpił błąd podczas wykonywania komendy!",
+		"error2": "Sprawdź czy bot posiada permisje do zbanowania użytkownika.",
+		"ban": "Zbanowano:",
+		"ban2": "Zbanowano przez:",
+		"reason": "Powód:"
+	},
+	"config": {
+		"notspecified": "Nie sprecyzowałeś na co ustawić dane ustawienie!",
+		"wrongchannel": "Dałeś nieprawidłowy kanał.",
+		"wronglang": "Wybrałeś nieprawidłowy język.",
+		"settings": [
+			"Zmieniono prefix",
+			"Prefix zmieniony",
+			"Kanał powitań zmieniony",
+			"Kanal pożegnań zmieniony",
+			"Wiadomość powitalna zmieniona",
+			"Wiadomość pożegnalna zmieniona",
+			"Status powitań zmieniony",
+			"Status pożegnań zmieniony"
+		],
+		"defaultt": {
+			"enabled": "Włączone",
+			"disabled": "Wyłączone",
+			"dscp": "Ustaw za pomocą",
+			"ss": "Ustawienia serwera",
+			"p": "Prefix - 1",
+			"w": "Kanał powitań - 2",
+			"g": "Kanał pożegnań - 3",
+			"wt": "Wiadomość powitalna - 4",
+			"gt": "Wiadomość pożegnalna - 5",
+			"we": "Powitania - 6",
+			"ge": "Pożegnania - 7",
+			"lg": "Język - 8"
+		},
+		"changes": ["Z", "na"]
+	},
+	"help": {
+		"all": "Wszystkie kategorie:",
+		"fun": "4Fun",
+		"tools": "Narzędzia",
+		"mod": "Moderacja",
+		"info": {
+			"cmdname": "Nazwa:",
+			"dscp": "Opis:",
+			"alias": "Skróty:",
+			"info": "Informacje o komendzie",
+			"category": "Kategoria:"
+		}
+	},
+	"kick": {
+		"noperm": "Nie mam permisji aby wyrzucić tego członka!",
+		"noperson": "Nie wybrałeś/aś osoby do wyrzucenia",
+		"noreason": "Nie podano powodu",
+		"title": "Członek został wyrzucony",
+		"kicked": "Wyrzucono:",
+		"kb": "Wyrzucono przez:",
+		"reason": "Powód:",
+		"error": "Wystąpił błąd"
+	},
+	"ping": "Mój ping to",
+	"serverinfo": {
+		"title": "Informacje o serwerze",
+		"fields": [
+			"Stworzony",
+			"Właściciel",
+			"Region serwera",
+			"Ilość użytkowników",
+			"Ilość kanałów",
+			"Ilość ról",
+			"Własne zaproszenie"
+		]
+	},
+	"userinfo": {
+		"title": "Userinfo",
+		"fields": ["Pseudonim", "Konto stworzone", "Dołączono"]
+	},
+	"events": {
+		"message": {
+			"dscp": "Cześć! Jestem Alcan, wielofunkcyjnym botem Discord! \nMój prefix na tym serwerze to:",
+			"guilds": "Serwery",
+			"users": "Użytkownicy",
+			"channels": "Kanały",
+			"perms1": "Nie możesz tego robić!",
+			"perms2": "Brakuje ci tej permisji:"
+		},
+		"guildMemberAdd": "Witaj",
+		"guildMemberRemove": "Żegnaj"
+	}
+}

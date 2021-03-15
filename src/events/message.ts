@@ -47,7 +47,7 @@ module.exports = async function (client: AlcanClient, message: Message) {
 			return message.channel.send(embed);
 		}
 
-		cmd(client, message, args);
+		cmd.run(client, message, args);
 		if (cmd.help.category === 'dev') return;
 	}
 };

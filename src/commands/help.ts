@@ -58,7 +58,7 @@ module.exports.run = (client: AlcanClient, message: Message, args: Array<string>
 		.setFooter(client.footer)
 		.setColor(client.color);
 
-	switch (args[0].toLowerCase()) {
+	switch (args[0]?.toLowerCase()) {
 		case '4fun':
 			message.channel.send(funembed);
 			break;
@@ -75,12 +75,11 @@ module.exports.run = (client: AlcanClient, message: Message, args: Array<string>
 			break;
 
 		default:
+			if (!args[0]) return message.channel.send(embed);
 			let cmd = client.cmds.get(args[0]);
 			if (message.guild.settings.lang === 'pl') {
-				cmd.description = cmd.descriptionpl;
+				cmd.help.description = cmd.help.descriptionpl;
 			}
-			if (!args[0]) return message.channel.send(embed);
-			console.log('test');
 			let infoembed = new MessageEmbed()
 				.setTitle(message.lang.info.info)
 				.addField(message.lang.info.cmdname, cmd.help.name)

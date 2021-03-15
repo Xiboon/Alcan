@@ -1,9 +1,9 @@
 import AlcanClient from '../classes/client';
 import { Message } from 'discord.js';
 import { readdirSync } from 'fs';
-module.exports = (client: AlcanClient, message: Message, args: Array<string>) => {
+module.exports.run = (client: AlcanClient, message: Message, args: Array<string>) => {
 	message.channel.send('Przeładowywanie komendy...');
-	if (readdirSync('../commands/').includes(`${args[0]}.js`)) client.cmds.delete(args[0]);
+	if (readdirSync('./commands/').includes(`${args[0]}.js`)) client.cmds.delete(args[0]);
 
 	try {
 		let code = client.functions.requireUncached(`./commands/${args}.js`);

@@ -11,11 +11,11 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 	const settings = await client.db.table('ServerSettings').get(message.guild?.id).run(client.conn);
 
 	let what = false;
-	let channel;
+	let channel, embed;
 	switch (args[0]) {
 		case '1':
 			if (!args[1]) return message.reply(message.lang.notspecified);
-			let embed = new MessageEmbed()
+			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[0])
 				.setDescription(
 					`${message.lang.changes[0]} ${settings.prefix || 'None'} ${
@@ -61,8 +61,6 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 			break;
 		case '4':
 			if (!args[1]) return message.reply(message.lang.notspecified);
-			channel = message.mentions.channels.first() || client.channels.cache.get(args[0]);
-			if (!channel) return message.reply(message.lang.wrongchannel);
 			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[3])
 				.setDescription(
@@ -72,7 +70,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 				)
 				.setFooter(client.footer)
 				.setColor(client.color);
-			save('wtext', channel.id);
+			save('wtext', args[1]);
 			message.channel.send(embed);
 			break;
 		case '5':
@@ -95,9 +93,9 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[5])
 				.setDescription(
-					`${message.lang.changes[0]} ${
-						settings.wenabled ? message.lang.default.enabled : message.lang.default.disabled
-					} to ${what ? 'enabled' : 'disabled'}`
+					`${message.lang.changes[0]} ${settings.wenabled ? 'enabled' : 'disabled'} to ${
+						what ? 'enabled' : 'disabled'
+					}`
 				)
 				.setFooter(client.footer)
 				.setColor(client.color);

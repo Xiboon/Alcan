@@ -1,13 +1,16 @@
 import dayjs from 'dayjs';
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
-module.exports = async (client: AlcanClient, message: Message, args: Array<string>) => {
+module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
 	if (!message.guild) return;
 	let embed = new MessageEmbed()
 		.setTitle(message.lang.title)
 		.setColor(client.color)
 		.setFooter(client.footer)
-		.setThumbnail(message.guild.iconURL({ dynamic: true }) || "https://discord.com/assets/28174a34e77bb5e5310ced9f95cb480b.png")
+		.setThumbnail(
+			message.guild.iconURL({ dynamic: true }) ||
+				'https://discord.com/assets/28174a34e77bb5e5310ced9f95cb480b.png'
+		)
 		.setDescription(`${message.guild.name}`)
 		.addField(message.lang.fields[0], dayjs(message.guild.createdTimestamp))
 		.addField(message.lang.fields[1], message.guild.owner?.user.tag)

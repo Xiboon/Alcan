@@ -1,6 +1,6 @@
 import { MessageEmbed, Message } from 'discord.js';
 import AlcanClient from '../classes/client';
-module.exports = async (client: AlcanClient, message: Message, args: Array<string>) => {
+module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
 	let member =
 		message.mentions.members?.first() || (await message.guild?.members.fetch(args[0]).catch());
 	let reason = args.slice(1).join(' ') || message.lang.noreason;

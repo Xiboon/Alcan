@@ -1,5 +1,4 @@
-import { GuildMember, TextChannel } from 'discord.js';
-import MessageEmbed from '../classes/MessageEmbed';
+import { GuildMember, TextChannel, MessageEmbed } from 'discord.js';
 import AlcanClient from '../classes/client';
 module.exports = async (client: AlcanClient, member: GuildMember) => {
 	let settings = await client.db.table('ServerSettings').get(member.guild.id).run(client.conn);
