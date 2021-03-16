@@ -13,10 +13,6 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 		)
 		.setDescription(`${message.guild.name}`)
 		.addField(message.lang.fields[0], dayjs(message.guild.createdTimestamp))
-		.addField(
-			message.lang.fields[1],
-			client.users.cache.get(message.guild.ownerID)?.tag || 'Nie znaleziono'
-		)
 		.addField(message.lang.fields[2], message.guild.region)
 		.addField(message.lang.fields[3], message.guild.memberCount)
 		.addField(message.lang.fields[4], message.guild.channels.cache.size)
