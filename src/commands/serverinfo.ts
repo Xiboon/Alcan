@@ -16,11 +16,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 		.addField(message.lang.fields[2], message.guild.region)
 		.addField(message.lang.fields[3], message.guild.memberCount)
 		.addField(message.lang.fields[4], message.guild.channels.cache.size)
-		.addField(message.lang.fields[5], message.guild.roles.cache.size)
-		.addField(
-			message.lang.fields[1],
-			client.users.cache.get(message.guild.ownerID)?.tag || 'Nie znaleziono'
-		)
+		.addField(message.lang.fields[5], message.guild.roles.cache.size);
 	if (message.guild.vanityURLCode)
 		embed.addField(message.lang.fields[6], message.guild.vanityURLCode);
 	message.channel.send(embed);
