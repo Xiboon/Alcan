@@ -36,6 +36,7 @@ interface functions {
 	createCase: Module;
 	getLang: Module;
 	requireUncached: Module;
+	getCase: Module;
 }
 declare module './classes/client' {
 	export interface Alcan {

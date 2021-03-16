@@ -12,6 +12,9 @@
 		"reason": "Powód:"
 	},
 	"config": {
+		"disabled": "Disabled",
+		"enabled": "Enabled",
+		"none": "Brak",
 		"notspecified": "Nie sprecyzowałeś na co ustawić dane ustawienie!",
 		"wrongchannel": "Dałeś nieprawidłowy kanał.",
 		"wronglang": "Wybrałeś nieprawidłowy język.",
@@ -83,6 +86,8 @@
 	},
 	"events": {
 		"message": {
+			"cmds": "Komendy",
+			"add": "Dodaj mnie do swojego serwera!",
 			"dscp": "Cześć! Jestem Alcan, wielofunkcyjnym botem Discord! \nMój prefix na tym serwerze to:",
 			"guilds": "Serwery",
 			"users": "Użytkownicy",
@@ -92,5 +97,12 @@
 		},
 		"guildMemberAdd": "Witaj",
 		"guildMemberRemove": "Żegnaj"
+	},
+	"case": {
+		"push": "Kara",
+		"ID": "ID kary:",
+		"type": "Typ kary:",
+		"target": "Użytkownik:",
+		"moderator": "Moderator:"
 	}
 }

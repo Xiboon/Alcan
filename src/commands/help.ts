@@ -17,7 +17,7 @@ module.exports.run = (client: AlcanClient, message: Message, args: Array<string>
 			.join(` \n`) || 'None';
 	let moderation =
 		cmds
-			.filter(cmd => cmd.help.category === 'admin')
+			.filter(cmd => cmd.help.category === 'Moderation')
 			.map(c => `${c.help.name}`)
 			.join(` \n`) || 'None';
 	let dev =

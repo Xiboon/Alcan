@@ -18,7 +18,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[0])
 				.setDescription(
-					`${message.lang.changes[0]} ${settings.prefix || 'None'} ${
+					`${message.lang.changes[0]} ${settings.prefix || message.lang.none} ${
 						message.lang.changes[1]
 					} ${args[1]}`
 				)
@@ -35,7 +35,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 				.setTitle(message.lang.settings[1])
 				.setDescription(
 					`${message.lang.changes[0]} ${
-						client.channels.cache.get(settings.wchannel) || 'None'
+						client.channels.cache.get(settings.wchannel) || message.lang.none
 					} ${message.lang.changes[1]} ${channel}`
 				)
 				.setFooter(client.footer)
@@ -51,7 +51,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 				.setTitle(message.lang.settings[2])
 				.setDescription(
 					`${message.lang.changes[0]}${
-						client.channels.cache.get(settings.gchannel) || 'None'
+						client.channels.cache.get(settings.gchannel) || message.lang.none
 					} ${message.lang.changes[1]} ${channel}`
 				)
 				.setFooter(client.footer)
@@ -64,9 +64,9 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[3])
 				.setDescription(
-					`${message.lang.changes[0]}${settings.wtext || 'None'} ${message.lang.changes[1]} ${
-						args[1]
-					}`
+					`${message.lang.changes[0]}${settings.wtext || message.lang.none} ${
+						message.lang.changes[1]
+					} ${args[1]}`
 				)
 				.setFooter(client.footer)
 				.setColor(client.color);
@@ -78,9 +78,9 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[4])
 				.setDescription(
-					`${message.lang.changes[0]} ${settings.gtext || 'None'} ${message.lang.changes[1]} ${
-						args[1]
-					}`
+					`${message.lang.changes[0]} ${settings.gtext || message.lang.none} ${
+						message.lang.changes[1]
+					} ${args[1]}`
 				)
 				.setFooter(client.footer)
 				.setColor(client.color);
@@ -93,9 +93,9 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[5])
 				.setDescription(
-					`${message.lang.changes[0]} ${settings.wenabled ? 'enabled' : 'disabled'} to ${
-						what ? 'enabled' : 'disabled'
-					}`
+					`${message.lang.changes[0]} ${
+						settings.wenabled ? message.lang.enabled : message.lang.disabled
+					} to ${what ? message.lang.enabled : message.lang.disabled}`
 				)
 				.setFooter(client.footer)
 				.setColor(client.color);
@@ -108,9 +108,9 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 			embed = new MessageEmbed()
 				.setTitle(message.lang.settings[6])
 				.setDescription(
-					`${message.lang.changes[0]} ${settings.genabled ? 'enabled' : 'disabled'} ${
-						message.lang.changes[1]
-					} ${what ? 'enabled' : 'disabled'}`
+					`${message.lang.changes[0]} ${
+						settings.genabled ? message.lang.enabled : message.lang.disabled
+					} ${message.lang.changes[1]} ${what ? 'enabled' : 'disabled'}`
 				)
 				.setFooter(client.footer)
 				.setColor(client.color);
@@ -139,16 +139,22 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 				.addField(message.lang.defaultt.p, settings.prefix || 'a!')
 				.addField(
 					message.lang.defaultt.w,
-					message.guild?.channels.cache.get(settings.wchannel) || 'None'
+					message.guild?.channels.cache.get(settings.wchannel) || message.lang.none
 				)
 				.addField(
 					message.lang.defaultt.g,
-					message.guild?.channels.cache.get(settings.gchannel) || 'None'
+					message.guild?.channels.cache.get(settings.gchannel) || message.lang.none
 				)
-				.addField(message.lang.defaultt.wt, settings.wtext || 'None')
-				.addField(message.lang.defaultt.gt, settings.gtext || 'None')
-				.addField(message.lang.defaultt.we, settings.wenabled ? 'Enabled' : 'Disabled')
-				.addField(message.lang.defaultt.ge, settings.genabled ? 'Enabled' : 'Disabled')
+				.addField(message.lang.defaultt.wt, settings.wtext || message.lang.none)
+				.addField(message.lang.defaultt.gt, settings.gtext || message.lang.none)
+				.addField(
+					message.lang.defaultt.we,
+					settings.wenabled ? message.lang.enabled : message.lang.disabled
+				)
+				.addField(
+					message.lang.defaultt.ge,
+					settings.genabled ? message.lang.enabled : message.lang.disabled
+				)
 				.addField(message.lang.defaultt.lg, settings.lang || '')
 				.setFooter(client.footer)
 				.setColor(client.color);

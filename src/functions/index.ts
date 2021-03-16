@@ -1,12 +1,14 @@
 import { functions } from '../types';
-let checkPerms = require('./checkPerms');
-let clean = require('./clean');
-let convertPerms = require('./convertPerms');
-let getLang = require('./getLang');
-let createCase = require('./createCase');
-let requireUncached = require('./requireUncached');
+const checkPerms = require('./checkPerms');
+const clean = require('./clean');
+const convertPerms = require('./convertPerms');
+const getLang = require('./getLang');
+const createCase = require('./createCase');
+const requireUncached = require('./requireUncached');
+const getCase = require('./getCase');
 
 module.exports = {
+	getCase: getCase,
 	checkPerms: checkPerms,
 	clean: clean,
 	convertPerms: convertPerms,

@@ -21,10 +21,16 @@ module.exports = async function (client: AlcanClient, message: Message) {
 	dayjs.locale(message.guild?.settings?.lang);
 	let uptime = dayjs.duration(client.uptime || 0).humanize();
 	message.lang = client.functions.getLang(message.guild)[cmdname];
-	if (message.mentions.members?.first() === message.guild.me) {
+	if (
+		message.content === `<@${client.user?.id}> ` ||
+		message.content === `<!@${client.user?.id}>`
+	) {
 		let embed = new MessageEmbed()
 			.setTitle('Alcan')
-			.setDescription(`${lang.dscp} ${prefix}`)
+			.setDescription(
+				`${lang.dscp} ${prefix}, [${lang.add}](https://discord.com/oauth2/authorize?client_id=${client.user?.id}&scope=bot&permissions=8)`
+			)
+			.addField(lang.cmds, client.cmds.size)
 			.addField(lang.guilds, client.guilds.cache.size)
 			.addField(lang.users, client.users.cache.size)
 			.addField(lang.channels, client.channels.cache.size)

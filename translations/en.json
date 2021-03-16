@@ -12,6 +12,9 @@
 		"reason": "Reason:"
 	},
 	"config": {
+		"disabled": "Disabled",
+		"enabled": "Enabled",
+		"none": "None",
 		"notspecified": "You didn't specify what to set to",
 		"wrongchannel": "You gave the wrong channel",
 		"wronglang": "You picked an invalid language.",
@@ -83,6 +86,8 @@
 	},
 	"events": {
 		"message": {
+			"cmds": "Commands",
+			"add": "Add me to your server!",
 			"dscp": "Hi! I'm Alcan, a multi-functional Discord bot! \n My prefix on this guild is:",
 			"guilds": "Guilds",
 			"users": "Users",
@@ -92,5 +97,12 @@
 		},
 		"guildMemberAdd": "Welcome",
 		"guildMemberRemove": "Goodbye"
+	},
+	"case": {
+		"push": "Punishment",
+		"ID": "Punishment ID:",
+		"type": "Punishment type:",
+		"target": "User:",
+		"moderator": "Moderator:"
 	}
 }

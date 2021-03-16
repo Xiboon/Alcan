@@ -1,4 +1,6 @@
-module.exports = (client, message, args) => {
+import AlcanClient from '../classes/client';
+import { Message } from 'discord.js';
+module.exports.run = (client: AlcanClient, message: Message, args: Array<string>) => {
 
 
 
@@ -7,6 +9,7 @@ module.exports = (client, message, args) => {
 module.exports.help = {
     name: "",
     description: "",
+    descriptionpl: '',
     aliases: [],
     category: "", // Tools, moderation, 4fun, dev
     perm: "admin" // user, admin, mod, tester, dev
