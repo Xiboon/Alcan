@@ -23,7 +23,7 @@ module.exports = async function (client: AlcanClient, message: Message) {
 	message.lang = client.functions.getLang(message.guild)[cmdname];
 	if (
 		message.content === `<@${client.user?.id}> ` ||
-		message.content === `<!@${client.user?.id}>`
+		message.content === `<@!${client.user?.id}>`
 	) {
 		let embed = new MessageEmbed()
 			.setTitle('Alcan')
