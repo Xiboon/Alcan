@@ -17,6 +17,19 @@ export default class AlcanClient extends Client {
 	public init(): void {
 		const client = this;
 		const commands = readdirSync('./commands');
+		const guilds = client.guilds.cache;
+		guilds.forEach(guild => {
+			const guilda = client.db.table('ServerSettings').get(guild.id).run(client.conn);
+			console.log('nie jestem nulek!!!' + guilda);
+			if (guilda === null) {
+				console.log('jestem nulek!!');
+				client.db
+					.table('ServerSettings')
+					.insert({ id: guild.id, prefix: 'a!', lang: 'en' })
+					.run(client.conn);
+				console.log('1/3');
+			}
+		});
 		commands.forEach(function (cmd) {
 			try {
 				let code = require(`../commands/${cmd}`);
@@ -30,18 +43,7 @@ export default class AlcanClient extends Client {
 				console.error(e);
 			}
 		});
-		const guilds = client.guilds.cache;
-		guilds.forEach(guild => {
-			const guilda = client.db.table('ServerSettings').get(guild.id).run(client.conn);
-			console.log('nie jestem nulek!!!' + guilda);
-			if (guilda === null) {
-				console.log('jestem nulek!!');
-				client.db
-					.table('ServerSettings')
-					.insert({ id: guild.id, prefix: 'a!', lang: 'en' })
-					.run(client.conn);
-			}
-		});
+		console.log('2/3');
 		// events handler
 		const events = readdirSync('./events');
 		events.forEach(function (evt) {
@@ -53,6 +55,6 @@ export default class AlcanClient extends Client {
 				console.error(e);
 			}
 		});
-		// ohh dohodze do startu!!!
+		console.log('jazda');
 	}
 }
