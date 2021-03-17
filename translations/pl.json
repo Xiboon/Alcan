@@ -12,8 +12,8 @@
 		"reason": "Powód:"
 	},
 	"config": {
-		"disabled": "Disabled",
-		"enabled": "Enabled",
+		"disabled": "Wyłączone",
+		"enabled": "Włączone",
 		"none": "Brak",
 		"notspecified": "Nie sprecyzowałeś na co ustawić dane ustawienie!",
 		"wrongchannel": "Dałeś nieprawidłowy kanał.",
