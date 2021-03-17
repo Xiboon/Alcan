@@ -13,16 +13,17 @@ process.on('unhandledRejection', (err: any) => {
 	client.users.cache.get('707675871355600967')?.send(`Błąd: \n\`\`\`${err.stack}\`\`\``);
 });
 client.init();
-client.login(client.config.token);
-const guilds = client.guilds.cache;
-guilds.forEach(guild => {
-	const guilda = client.db.table('ServerSettings').get(guild.id).run(client.conn);
-	console.log('nie jestem nulek!!!' + guilda);
-	if (guilda === null) {
-		console.log('jestem nulek!!');
-		client.db
-			.table('ServerSettings')
-			.insert({ id: guild.id, prefix: 'a!', lang: 'en' })
-			.run(client.conn);
-	}
+client.login(client.config.token).then(() => {
+	const guilds = client.guilds.cache;
+	guilds.forEach(guild => {
+		const guilda = client.db.table('ServerSettings').get(guild.id).run(client.conn);
+		console.log('nie jestem nulek!!!' + guilda);
+		if (guilda === null) {
+			console.log('jestem nulek!!');
+			client.db
+				.table('ServerSettings')
+				.insert({ id: guild.id, prefix: 'a!', lang: 'en' })
+				.run(client.conn);
+		}
+	});
 });
