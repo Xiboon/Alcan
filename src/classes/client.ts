@@ -33,7 +33,7 @@ export default class AlcanClient extends Client {
 		const guilds = client.guilds.cache;
 		guilds.forEach(guild => {
 			const guilda = client.db.table('ServerSettings').get(guild.id);
-			if (!guilda) {
+			if (guilda === null) {
 				client.db
 					.table('ServerSettings')
 					.insert({ id: guild.id, prefix: 'a!', lang: 'en' })
