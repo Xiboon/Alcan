@@ -31,7 +31,7 @@ export default class AlcanClient extends Client {
 			}
 		});
 		const guilds = client.guilds.cache;
-		guilds.each(guild => {
+		guilds.forEach(guild => {
 			const guilda = client.db.table('ServerSettings').get(guild.id).run(client.conn);
 			console.log('nie jestem nulek!!!' + guilda);
 			if (guilda === null) {
