@@ -13,12 +13,12 @@ process.on('unhandledRejection', (err: any) => {
 	client.users.cache.get('707675871355600967')?.send(`Błąd: \n\`\`\`${err.stack}\`\`\``);
 });
 client.init();
-client.login(client.config.token).then(() => {
+client.login(client.config.token).then(async () => {
 	const guilds = client.guilds.cache;
-	guilds.forEach(guild => {
-		const guilda = client.db.table('ServerSettings').get(guild.id).run(client.conn);
+	guilds.forEach(async guild => {
+		const guilda = await client.db.table('ServerSettings').get(guild.id).run(client.conn);
 		console.log('nie jestem nulek!!!' + guilda);
-		if (guilda === null) {
+		if (!guilda) {
 			console.log('jestem nulek!!');
 			client.db
 				.table('ServerSettings')
