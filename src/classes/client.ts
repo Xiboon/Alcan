@@ -30,7 +30,16 @@ export default class AlcanClient extends Client {
 				console.error(e);
 			}
 		});
-
+		const guilds = client.guilds.cache;
+		guilds.forEach(guild => {
+			const guilda = client.db.table('ServerSettings').get(guild.id);
+			if (!guilda) {
+				client.db
+					.table('ServerSettings')
+					.insert({ id: guild.id, prefix: 'a!', lang: 'en' })
+					.run(client.conn);
+			}
+		});
 		// events handler
 		const events = readdirSync('./events');
 		events.forEach(function (evt) {
@@ -42,5 +51,6 @@ export default class AlcanClient extends Client {
 				console.error(e);
 			}
 		});
+		// ohh dohodze do startu!!!
 	}
 }
