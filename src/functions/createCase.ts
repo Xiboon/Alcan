@@ -12,12 +12,12 @@ module.exports = async function (
 		.table('Case')
 		.getAll(guild.id, { index: 'id' })
 		.orderBy(client.db.desc('nr'))
-		.filter(1)
+		.limit(1)
 		.run(client.conn);
 	let nr1;
-
+	console.log(values);
 	if (values[0] && values[0].nr) nr1 = values[0].nr;
-	else nr1 = '1';
+	else nr1 = 0;
 
-	return { nr: nr1, id: guild.id, user: user, creator: creator, type: type, dscp: dscp };
+	return { nr: nr1 + 1, id: guild.id, user: user, creator: creator, type: type, dscp: dscp };
 };

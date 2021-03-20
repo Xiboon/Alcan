@@ -1,6 +1,7 @@
 {
 	"8ball": {
-		"responses": ["Tak", "Nie", "Możliwe", "Prawdopodobnie", "Nie jestem pewien"]
+		"responses": ["Tak", "Nie", "Możliwe", "Prawdopodobnie", "Nie jestem pewien"],
+		"ans": "Odpowiedź"
 	},
 	"ban": {
 		"noreason": "Nie podano powodu",
@@ -88,12 +89,12 @@
 		"message": {
 			"cmds": "Komendy",
 			"add": "Dodaj mnie do swojego serwera!",
-			"dscp": "Cześć! Jestem Alcan, wielofunkcyjnym botem Discord! \nMój prefix na tym serwerze to:",
+			"dscp": "Cześć! Jestem Alcan, wielofunkcyjnym botem Discord! \nMój prefix na tym serwerze to:\n",
 			"guilds": "Serwery",
 			"users": "Użytkownicy",
 			"channels": "Kanały",
 			"perms1": "Nie możesz tego robić!",
-			"perms2": "Brakuje ci tej permisji:"
+			"perms2": "Brakuje ci tej permisji: "
 		},
 		"guildMemberAdd": "Witaj",
 		"guildMemberRemove": "Żegnaj"
@@ -101,8 +102,10 @@
 	"case": {
 		"push": "Kara",
 		"ID": "ID kary:",
+		"dscp": "Opis: ",
 		"type": "Typ kary:",
 		"target": "Użytkownik:",
-		"moderator": "Moderator:"
+		"moderator": "Moderator:",
+		"error": "Musisz podać prawidłowe ID."
 	}
 }

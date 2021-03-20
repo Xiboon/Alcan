@@ -1,6 +1,7 @@
 {
 	"8ball": {
-		"responses": ["Yes", "No", "Maybe", "Certainly", "I'm not sure"]
+		"responses": ["Yes", "No", "Maybe", "Certainly", "I'm not sure"],
+		"ans": "Answer"
 	},
 	"ban": {
 		"noreason": "No reason provided.",
@@ -31,7 +32,7 @@
 		"defaultt": {
 			"enabled": "Enabled",
 			"disabled": "Disabled",
-			"dscp": "Set with",
+			"dscp": "Set with a!config <number> [value]",
 			"ss": "Server settings",
 			"p": "Prefix - 1",
 			"w": "Welcome channel - 2",
@@ -88,7 +89,7 @@
 		"message": {
 			"cmds": "Commands",
 			"add": "Add me to your server!",
-			"dscp": "Hi! I'm Alcan, a multi-functional Discord bot! \n My prefix on this guild is:",
+			"dscp": "Hi! I'm Alcan, a multi-functional Discord bot! \n My prefix on this guild is:\n",
 			"guilds": "Guilds",
 			"users": "Users",
 			"channels": "Channels",
@@ -101,8 +102,10 @@
 	"case": {
 		"push": "Punishment",
 		"ID": "Punishment ID:",
+		"dscp": "Description: ",
 		"type": "Punishment type:",
 		"target": "User:",
-		"moderator": "Moderator:"
+		"moderator": "Moderator:",
+		"error": "You need to provide a valid ID"
 	}
 }

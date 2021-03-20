@@ -14,7 +14,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 		message.channel.send(`\`\`\`js\n${clean}\n\`\`\``);
 		message.react('✅');
 	} catch (err) {
-		message.channel.send(`KEKŁO SIĘ NO`);
+		message.channel.send(`ERROR`);
 		message.channel.send(
 			`\`ERROR\` \`\`\`xl\n${await client.functions.clean(client, err)}\n\`\`\``
 		);

@@ -9,8 +9,8 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 	let casecreate = await client.functions.createCase(
 		client,
 		message.guild,
-		user,
-		message.author,
+		user.id,
+		message.author.id,
 		'ban',
 		reason
 	);

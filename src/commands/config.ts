@@ -135,7 +135,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 		default:
 			embed = new MessageEmbed()
 				.setTitle(message.lang.defaultt.ss)
-				.setDescription(message.lang.defaultt.dscp + 'a!config <number> <value>')
+				.setDescription(message.lang.defaultt.dscp + ' a!config <number> <value>')
 				.addField(message.lang.defaultt.p, settings.prefix || 'a!')
 				.addField(
 					message.lang.defaultt.w,

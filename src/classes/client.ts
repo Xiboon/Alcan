@@ -7,7 +7,7 @@ export default class AlcanClient extends Client {
 		super({});
 		this.cmds = new Map<string, Module>();
 		this.aliases = new Map<string, string>();
-		this.color = '#6600ff';
+		this.color = '#59bfe7';
 		this.config = require('../../config.json');
 		this.version = '1.1.0';
 		this.footer = `Alcan ${this.version}`;
@@ -19,6 +19,7 @@ export default class AlcanClient extends Client {
 		const commands = readdirSync('./commands');
 		commands.forEach(function (cmd) {
 			try {
+				console.log(cmd);
 				let code = require(`../commands/${cmd}`);
 				let cmdname = cmd.split('.')[0];
 				client.cmds.set(cmdname, code);

@@ -6,7 +6,7 @@ module.exports.run = function(client: AlcanClient, message: Message, args: Array
 		.setDescription(args.join(' '))
 		.setColor(client.color)
 		.setFooter(client.footer)
-		.addField('Answer:', responses[Math.floor(Math.random() * responses.length)]);
+		.addField(message.lang.ans, responses[Math.floor(Math.random() * responses.length)]);
 	message.channel.send(embed);
 }
 

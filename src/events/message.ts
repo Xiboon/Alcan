@@ -20,9 +20,8 @@ module.exports = async function (client: AlcanClient, message: Message) {
 	dayjs.extend(relativeTime);
 	dayjs.locale(message.guild?.settings?.lang);
 	let uptime = dayjs.duration(client.uptime || 0).humanize();
-	message.lang = client.functions.getLang(message.guild)[cmdname];
 	if (
-		message.content === `<@${client.user?.id}> ` ||
+		message.content === `<@${client.user?.id}>` ||
 		message.content === `<@!${client.user?.id}>`
 	) {
 		let embed = new MessageEmbed()
@@ -40,6 +39,7 @@ module.exports = async function (client: AlcanClient, message: Message) {
 	if (message.content.startsWith(prefix)) {
 		// @ts-ignore
 		let cmd = client.cmds.get(cmdname) || client.cmds.get(client.aliases.get(cmdname));
+		message.lang = client.functions.getLang(message.guild)[cmd.help.name];
 		if (!cmd) return message.react('❌');
 		let permsNeeded = cmd.help.perm;
 		message.member.perms = client.functions.checkPerms(client, message.member, message.guild);
