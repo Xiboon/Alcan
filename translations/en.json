@@ -89,7 +89,7 @@
 		"message": {
 			"cmds": "Commands",
 			"add": "Add me to your server!",
-			"dscp": "Hi! I'm Alcan, a multi-functional Discord bot! \n My prefix on this guild is:\n",
+			"dscp": "Hi! I'm Alcan, a multi-functional Discord bot! \n My prefix on this guild is:",
 			"guilds": "Guilds",
 			"users": "Users",
 			"channels": "Channels",

@@ -1,6 +1,5 @@
 import AlcanClient from './classes/client';
-import { connect, Connection } from 'rethinkdb';
-import { readdirSync } from 'fs';
+import { connect } from 'rethinkdb';
 const client = new AlcanClient();
 connect({}, function (err, conn) {
 	if (err) throw err;
@@ -15,7 +14,6 @@ process.on('unhandledRejection', (err: any) => {
 client.init();
 client.login(client.config.token).then(async () => {
 	const guilds = client.guilds.cache;
-	console.log(client.user?.tag);
 	guilds.forEach(async guild => {
 		const guilda = await client.db.table('ServerSettings').get(guild.id).run(client.conn);
 		if (!guilda) {

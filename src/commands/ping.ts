@@ -1,6 +1,6 @@
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	let embed = new MessageEmbed()
 		.setTitle('Ping')
 		.setColor(client.color)
@@ -10,11 +10,11 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 	message.channel.send(embed);
 };
 
-module.exports.help = {
+export const help = {
 	name: 'ping',
 	aliases: ['delay', 'latency'],
 	description: "Check bot's ping",
 	descriptionpl: 'Sprawdź ping bota',
 	category: 'Tools', // Tools, Moderation, 4fun, dev
-	perm: 'user' // user, admin, mod, tester, dev
+	perm: 'NULL' // user, admin, mod, tester, dev
 };

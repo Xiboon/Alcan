@@ -1,7 +1,7 @@
 import AlcanClient from '../classes/client';
 import { Message } from 'discord.js';
 import { readdirSync } from 'fs';
-module.exports.run = (client: AlcanClient, message: Message, args: Array<string>) => {
+export function run(client: AlcanClient, message: Message, args: Array<string>) {
 	message.channel.send('Przeładowywanie komendy...');
 	if (readdirSync('./commands/').includes(`${args[0]}.js`)) client.cmds.delete(args[0]);
 
@@ -16,11 +16,11 @@ module.exports.run = (client: AlcanClient, message: Message, args: Array<string>
 	message.channel.send(`Przeładowano komendę`);
 };
 
-module.exports.help = {
+export const help = {
 	name: 'reload',
 	aliases: [],
 	description: 'Reload a command!',
 	descriptionpl: 'Przeładuj komendę!',
 	category: 'dev', // Tools, moderation, 4fun, dev
-	perm: 'dev' // user, admin, mod, tester, dev
+	perm: 'BOT_DEVELOPER' // user, admin, mod, tester, dev
 };

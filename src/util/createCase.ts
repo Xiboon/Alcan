@@ -1,6 +1,6 @@
 import AlcanClient from '../classes/client';
 import { Guild, User } from 'discord.js';
-module.exports = async function (
+export async function run(
 	client: AlcanClient,
 	guild: Guild,
 	user: User,

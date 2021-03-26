@@ -1,6 +1,6 @@
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	let user =
 		// @ts-ignore
 		message.mentions.users.first() || (await client.users.fetch(args[0]).catch(err => {}));
@@ -34,13 +34,13 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 		.addField(message.lang.reason, reason);
 	message.channel.send(banembed);
 	client.db.table('Case').insert(casecreate).run(client.conn);
-};
+}
 
-module.exports.help = {
+export const help = {
 	name: 'ban',
 	aliases: [],
 	description: 'Ban a user in your guild.',
 	descriptionpl: 'Zbanuj użytkownika na swoim serwerze',
 	category: 'Moderation', // Tools, Moderation, 4fun, dev
-	perm: 'admin' // user, admin, mod, tester, dev
+	perm: 'BAN_MEMBERS' // user, admin, mod, tester, dev
 };

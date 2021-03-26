@@ -2,31 +2,31 @@ import { Module } from 'node:module';
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
 import type { command } from '../types';
-module.exports.run = (client: AlcanClient, message: Message, args: Array<string>) => {
+export function run(client: AlcanClient, message: Message, args: Array<string>) {
 	if (!message.guild || !message.guild.settings) return;
-	let cmds: Array<command> = Array.from(client.cmds.values());
-	let fun =
+	const cmds: Array<command> = Array.from(client.cmds.values());
+	const fun =
 		cmds
 			.filter(cmd => cmd.help.category === '4fun')
 			.map(c => c.help.name)
 			.join(` \n`) || 'None';
-	let tools =
+	const tools =
 		cmds
 			.filter(cmd => cmd.help.category === 'Tools')
 			.map(c => `${c.help.name}`)
 			.join(` \n`) || 'None';
-	let moderation =
+	const moderation =
 		cmds
 			.filter(cmd => cmd.help.category === 'Moderation')
 			.map(c => `${c.help.name}`)
 			.join(` \n`) || 'None';
-	let dev =
+	const dev =
 		cmds
 			.filter(cmd => cmd.help.category === 'dev')
 			.map(c => `${c.help.name}`)
 			.join(` \n`) || 'None';
 
-	let embed = new MessageEmbed()
+	const embed = new MessageEmbed()
 		.setTitle('Alcan')
 		.setDescription(message.lang.all)
 		.addField(message.lang.fun, `\`\`\`${message.guild.settings.prefix}help 4fun\`\`\``)
@@ -92,12 +92,12 @@ module.exports.run = (client: AlcanClient, message: Message, args: Array<string>
 			message.channel.send(infoembed);
 			break;
 	}
-};
-module.exports.help = {
+}
+export const help = {
 	name: 'help',
 	aliases: ['commands', 'h'],
 	description: 'All commands listed!',
 	descriptionpl: 'Lista wszystkich komend!',
 	category: 'Tools',
-	perm: 'user'
+	perm: 'NULL'
 };

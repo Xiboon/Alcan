@@ -1,6 +1,6 @@
 import { MessageEmbed, Message } from 'discord.js';
 import AlcanClient from '../classes/client';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	let member =
 		message.mentions.members?.first() || (await message.guild?.members.fetch(args[0]).catch());
 	let reason = args.slice(1).join(' ') || message.lang.noreason;
@@ -26,11 +26,11 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 	});
 };
 
-module.exports.help = {
+export const help = {
 	name: 'kick',
 	aliases: [],
 	description: 'Kick a user in your guild.',
 	descriptionpl: 'Wyrzuć użytkownika ze swojego serwera',
 	category: 'Moderation', // Tools, Moderation, 4fun, dev
-	perm: 'mod' // user, admin, mod, tester, dev
+	perm: 'KICK_MEMBERS' // user, admin, mod, tester, dev
 };

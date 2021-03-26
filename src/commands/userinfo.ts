@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	let member = message.mentions.members?.first() || message.member;
 	let user =
 		message.mentions.users.first() ||
@@ -18,13 +18,13 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 	// @ts-ignore
 	if (member) embed.addField(message.lang.fields[2], dayjs(member.joinedTimestamp));
 	message.channel.send(embed);
-};
+}
 
-module.exports.help = {
+export const help = {
 	name: 'userinfo',
 	aliases: ['ui'],
 	description: 'Info about  an user.',
 	descriptionpl: 'Informacje o użytkowniku',
 	category: 'Tools', // Tools, Moderation, 4fun, dev
-	perm: 'user' // user, admin, mod, tester, dev
+	perm: 'NULL' // user, admin, mod, tester, dev
 };

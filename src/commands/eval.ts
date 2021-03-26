@@ -1,6 +1,6 @@
 import type AlcanClient from '../classes/client';
 import type { Message } from 'discord.js';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	if (args.includes('client.token'))
 		return message.channel.send(
 			"I'm not gonna run this code. Delete client.token and then run the code again."
@@ -23,11 +23,11 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 	}
 };
 
-module.exports.help = {
+export const help = {
 	name: 'eval',
 	aliases: ['evaluate', 'run', 'e'],
 	description: 'Evaluates your JS code. Works only for developers.',
 	descriptionpl: 'Ewaluuj kod JS. Działa tylko dla developerów.',
 	category: 'dev',
-	perm: 'dev' // user, moderator admin, tester,  dev
+	perm: 'BOT_DEVELOPER' // user, moderator admin, tester,  dev
 };

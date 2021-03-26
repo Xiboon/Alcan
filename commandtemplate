@@ -1,16 +1,16 @@
 import AlcanClient from '../classes/client';
 import { Message } from 'discord.js';
-module.exports.run = (client: AlcanClient, message: Message, args: Array<string>) => {
+export function run(client: AlcanClient, message: Message, args: Array<string>) {
 
 
 
 }
 
-module.exports.help = {
+export const help = {
     name: "",
     description: "",
     descriptionpl: '',
     aliases: [],
     category: "", // Tools, moderation, 4fun, dev
-    perm: "admin" // user, admin, mod, tester, dev
+    perm: "admin"
 }

@@ -1,6 +1,6 @@
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	const save = (toSave: string, value: string | boolean | undefined) => {
 		client.db
 			.table('ServerSettings')
@@ -135,7 +135,7 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 		default:
 			embed = new MessageEmbed()
 				.setTitle(message.lang.defaultt.ss)
-				.setDescription(message.lang.defaultt.dscp + ' a!config <number> <value>')
+				.setDescription(message.lang.defaultt.dscp)
 				.addField(message.lang.defaultt.p, settings.prefix || 'a!')
 				.addField(
 					message.lang.defaultt.w,
@@ -160,13 +160,13 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 				.setColor(client.color);
 			message.channel.send(embed);
 	}
-};
+}
 
-module.exports.help = {
+export const help = {
 	name: 'config',
 	aliases: ['settings'],
 	description: "Configure your server's settings!",
 	descriptionpl: 'Skonfiguruj ustawienia swojego serwera!',
 	category: 'Tools',
-	perm: 'admin'
+	perm: 'MANAGE_GUILD'
 };

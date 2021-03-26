@@ -1,6 +1,6 @@
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	if (!args[0]) return message.reply(message.lang.error);
 	const caseArray = await client.functions.getCase(client, message.guild, args[0]);
 	const Case = caseArray[0];
@@ -17,12 +17,12 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 		.addField(message.lang.target, user?.tag)
 		.addField(message.lang.moderator, creator?.tag);
 	message.channel.send(embed);
-};
-module.exports.help = {
+}
+export const help = {
 	name: 'case',
 	description: 'Check info about a punishment',
 	descriptionpl: 'Sprawdź informacje o karze',
 	aliases: ['punishments'],
 	category: 'Tools', // Tools, moderation, 4fun, dev
-	perm: 'admin' // user, admin, mod, tester, dev
+	perm: 'KICK_MEMBERS' // user, admin, mod, tester, dev
 };

@@ -21,18 +21,18 @@
 		"wronglang": "Wybrałeś nieprawidłowy język.",
 		"settings": [
 			"Zmieniono prefix",
-			"Prefix zmieniony",
 			"Kanał powitań zmieniony",
 			"Kanal pożegnań zmieniony",
 			"Wiadomość powitalna zmieniona",
 			"Wiadomość pożegnalna zmieniona",
 			"Status powitań zmieniony",
-			"Status pożegnań zmieniony"
+			"Status pożegnań zmieniony",
+			"Język serwera zmieniony"
 		],
 		"defaultt": {
 			"enabled": "Włączone",
 			"disabled": "Wyłączone",
-			"dscp": "Ustaw za pomocą",
+			"dscp": "Ustaw za pomocą a!config <nr> [wartość]",
 			"ss": "Ustawienia serwera",
 			"p": "Prefix - 1",
 			"w": "Kanał powitań - 2",
@@ -89,7 +89,7 @@
 		"message": {
 			"cmds": "Komendy",
 			"add": "Dodaj mnie do swojego serwera!",
-			"dscp": "Cześć! Jestem Alcan, wielofunkcyjnym botem Discord! \nMój prefix na tym serwerze to:\n",
+			"dscp": "Cześć! Jestem Alcan, wielofunkcyjnym botem Discord! \nMój prefix na tym serwerze to:",
 			"guilds": "Serwery",
 			"users": "Użytkownicy",
 			"channels": "Kanały",

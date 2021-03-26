@@ -1,8 +1,8 @@
 import { GuildMember, TextChannel, MessageEmbed } from 'discord.js';
 import AlcanClient from '../classes/client';
-module.exports = async (client: AlcanClient, member: GuildMember) => {
+export async function run(client: AlcanClient, member: GuildMember) {
 	let settings = await client.db.table('ServerSettings').get(member.guild.id).run(client.conn);
-	if (!settings.genabled) return;
+	if (!settings.genabled || !settings.gtext) return;
 	member.guild.settings = settings;
 	let lang = client.functions.getLang(member.guild).events.guildMemberRemove;
 	let text = settings.gtext

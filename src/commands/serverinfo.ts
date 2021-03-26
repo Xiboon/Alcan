@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
-module.exports.run = async (client: AlcanClient, message: Message, args: Array<string>) => {
+export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	if (!message.guild) return;
 	let embed = new MessageEmbed()
 		.setTitle(message.lang.title)
@@ -20,13 +20,13 @@ module.exports.run = async (client: AlcanClient, message: Message, args: Array<s
 	if (message.guild.vanityURLCode)
 		embed.addField(message.lang.fields[6], message.guild.vanityURLCode);
 	message.channel.send(embed);
-};
+}
 
-module.exports.help = {
+export const help = {
 	name: 'serverinfo',
 	aliases: ['si'],
 	description: "Info about the guild you're in.",
 	descriptionpl: 'Informacje o serwerze',
 	category: 'Tools', // Tools, Moderation, 4fun, dev
-	perm: 'user' // user, admin, mod, tester, dev
+	perm: 'NULL' // user, admin, mod, tester, dev
 };

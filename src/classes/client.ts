@@ -2,6 +2,8 @@ import { Client } from 'discord.js';
 import Module from 'node:module';
 import * as r from 'rethinkdb';
 import { readdirSync } from 'fs';
+import { functions } from '../types';
+import * as util from '../util/index';
 export default class AlcanClient extends Client {
 	public constructor() {
 		super({});
@@ -11,17 +13,18 @@ export default class AlcanClient extends Client {
 		this.config = require('../../config.json');
 		this.version = '1.1.0';
 		this.footer = `Alcan ${this.version}`;
-		this.functions = require('../functions/index');
+		this.functions = util as functions;
 		this.db = r;
 	}
-	public init(): void {
+	public async init(): Promise<void> {
 		const client = this;
+		console.log(client.functions);
 		const commands = readdirSync('./commands');
-		commands.forEach(function (cmd) {
+		commands.forEach(async function (cmd) {
 			try {
 				console.log(cmd);
-				let code = require(`../commands/${cmd}`);
-				let cmdname = cmd.split('.')[0];
+				const code = await import(`../commands/${cmd}`);
+				const cmdname = cmd.split('.')[0];
 				client.cmds.set(cmdname, code);
 				// aliasy
 				code.help.aliases.forEach(function (alias: string) {
@@ -31,18 +34,18 @@ export default class AlcanClient extends Client {
 				console.error(e);
 			}
 		});
-		console.log('2/3');
 		// events handler
 		const events = readdirSync('./events');
-		events.forEach(function (evt) {
+		events.forEach(async function (evt) {
 			try {
-				let code = require(`../events/${evt}`);
-				let evtname = evt.split('.')[0];
-				client.on(evtname, code.bind(null, client));
+				const code = await import(`../events/${evt}`);
+				const evtname = evt.split('.')[0];
+				client.on(evtname, event => {
+					code.run(client, event);
+				});
 			} catch (e) {
 				console.error(e);
 			}
 		});
-		console.log('jazda');
 	}
 }

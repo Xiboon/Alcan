@@ -38,13 +38,6 @@ interface functions {
 	requireUncached: Module;
 	getCase: Module;
 }
-declare module './classes/client' {
-	export interface Alcan {
-		footer: string;
-		color: string;
-	}
-	AlcanClient: Alcan;
-}
 declare module 'discord.js' {
 	export interface Client {
 		cmds: Map<string, Module>;
