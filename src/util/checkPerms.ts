@@ -1,6 +1,6 @@
 import AlcanClient from '../classes/client';
 import { GuildMember, PermissionResolvable } from 'discord.js';
-export default function run(
+export default function checkPerms(
 	client: AlcanClient,
 	member: GuildMember,
 	perm: PermissionResolvable | string

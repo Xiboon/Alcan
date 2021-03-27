@@ -94,7 +94,7 @@
 			"users": "Users",
 			"channels": "Channels",
 			"perms1": "You can't do that!",
-			"perms2": "You're missing the following permission:"
+			"perms2": "You're missing the following permission: "
 		},
 		"guildMemberAdd": "Welcome",
 		"guildMemberRemove": "Goodbye"

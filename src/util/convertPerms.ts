@@ -1,5 +1,5 @@
 import { Guild } from "discord.js"
-export function run(perm: string, guild: Guild) {
+export default function convertPerms(perm: string, guild: Guild) {
     let converted;
     if (!guild.settings) return new Error("xibon idioto czemu wsadzasz obiekt guild ktory nie ma settings!!!!")
     if (guild.settings.lang === "pl") {

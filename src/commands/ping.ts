@@ -6,9 +6,10 @@ export async function run(client: AlcanClient, message: Message, args: Array<str
 		.setColor(client.color)
 		.setFooter(client.footer)
 		.setDescription('Pong')
+		.setTimestamp()
 		.addField(message.lang, client.ws.ping + 'ms');
 	message.channel.send(embed);
-};
+}
 
 export const help = {
 	name: 'ping',
@@ -16,5 +17,5 @@ export const help = {
 	description: "Check bot's ping",
 	descriptionpl: 'Sprawdź ping bota',
 	category: 'Tools', // Tools, Moderation, 4fun, dev
-	perm: 'NULL' // user, admin, mod, tester, dev
+	perm: 'NULL', // user, admin, mod, tester, dev
 };

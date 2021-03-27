@@ -1,5 +1,5 @@
 import { Guild } from 'discord.js';
-export default function(guild: Guild) {
+export default function getLang(guild: Guild) {
 	let lang;
 	if (!guild.settings)
 		return console.error('xibon idioto czemu wsadzasz obiekt guild ktory nie ma settings!!!!');

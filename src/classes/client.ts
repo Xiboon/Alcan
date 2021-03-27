@@ -2,8 +2,7 @@ import { Client } from 'discord.js';
 import Module from 'node:module';
 import * as r from 'rethinkdb';
 import { readdirSync } from 'fs';
-import { functions } from '../types';
-import * as util from '../util/index';
+import { functions } from '../util/index';
 export default class AlcanClient extends Client {
 	public constructor() {
 		super({});
@@ -11,9 +10,9 @@ export default class AlcanClient extends Client {
 		this.aliases = new Map<string, string>();
 		this.color = '#59bfe7';
 		this.config = require('../../config.json');
-		this.version = '1.1.0';
+		this.version = '1.2.0';
 		this.footer = `Alcan ${this.version}`;
-		this.functions = util as functions;
+		this.functions = functions as any;
 		this.db = r;
 	}
 	public async init(): Promise<void> {
@@ -40,7 +39,7 @@ export default class AlcanClient extends Client {
 			try {
 				const code = await import(`../events/${evt}`);
 				const evtname = evt.split('.')[0];
-				client.on(evtname, event => {
+				client.on(evtname, (event) => {
 					code.run(client, event);
 				});
 			} catch (e) {

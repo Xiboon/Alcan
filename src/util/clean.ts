@@ -1,5 +1,5 @@
 import AlcanClient from '../classes/client'
-export async function run(client: AlcanClient, text: any): Promise<string> {
+export default async function clean(client: AlcanClient, text: any): Promise<string> {
     if (text && text.constructor.name == "Promise") text = await text;
     if (typeof text !== "string")
         text = require("util").inspect(text, { depth: 1 });

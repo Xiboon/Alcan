@@ -7,23 +7,23 @@ export function run(client: AlcanClient, message: Message, args: Array<string>) 
 	const cmds: Array<command> = Array.from(client.cmds.values());
 	const fun =
 		cmds
-			.filter(cmd => cmd.help.category === '4fun')
-			.map(c => c.help.name)
+			.filter((cmd) => cmd.help.category === '4fun')
+			.map((c) => c.help.name)
 			.join(` \n`) || 'None';
 	const tools =
 		cmds
-			.filter(cmd => cmd.help.category === 'Tools')
-			.map(c => `${c.help.name}`)
+			.filter((cmd) => cmd.help.category === 'Tools')
+			.map((c) => `${c.help.name}`)
 			.join(` \n`) || 'None';
 	const moderation =
 		cmds
-			.filter(cmd => cmd.help.category === 'Moderation')
-			.map(c => `${c.help.name}`)
+			.filter((cmd) => cmd.help.category === 'Moderation')
+			.map((c) => `${c.help.name}`)
 			.join(` \n`) || 'None';
 	const dev =
 		cmds
-			.filter(cmd => cmd.help.category === 'dev')
-			.map(c => `${c.help.name}`)
+			.filter((cmd) => cmd.help.category === 'dev')
+			.map((c) => `${c.help.name}`)
 			.join(` \n`) || 'None';
 
 	const embed = new MessageEmbed()
@@ -33,29 +33,34 @@ export function run(client: AlcanClient, message: Message, args: Array<string>) 
 		.addField(message.lang.tools, `\`\`\`${message.guild.settings.prefix}help tools\`\`\``)
 		.addField(message.lang.mod, `\`\`\`${message.guild.settings.prefix}help mod\`\`\``)
 		.setFooter(client.footer)
+		.setTimestamp()
 		.setColor(client.color);
 	let funembed = new MessageEmbed()
 		.setTitle(message.lang.fun)
 		.setDescription(fun)
 		.setFooter(client.footer)
+		.setTimestamp()
 		.setColor(client.color);
 
 	let toolsembed = new MessageEmbed()
 		.setTitle(message.lang.tools)
 		.setDescription(tools)
 		.setFooter(client.footer)
+		.setTimestamp()
 		.setColor(client.color);
 
 	let modembed = new MessageEmbed()
 		.setTitle(message.lang.mod)
 		.setDescription(moderation)
 		.setFooter(client.footer)
+		.setTimestamp()
 		.setColor(client.color);
 
 	let devembed = new MessageEmbed()
 		.setTitle('Developer Tools')
 		.setDescription(dev)
 		.setFooter(client.footer)
+		.setTimestamp()
 		.setColor(client.color);
 
 	switch (args[0]?.toLowerCase()) {
@@ -88,6 +93,7 @@ export function run(client: AlcanClient, message: Message, args: Array<string>) 
 				.addField(message.lang.info.category, cmd.help.category)
 				.addField(message.lang.info.alias, cmd.help.aliases)
 				.setFooter(client.footer)
+				.setTimestamp()
 				.setColor(client.color);
 			message.channel.send(infoembed);
 			break;
@@ -99,5 +105,5 @@ export const help = {
 	description: 'All commands listed!',
 	descriptionpl: 'Lista wszystkich komend!',
 	category: 'Tools',
-	perm: 'NULL'
+	perm: 'NULL',
 };

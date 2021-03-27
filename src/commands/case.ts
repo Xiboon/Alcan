@@ -15,7 +15,8 @@ export async function run(client: AlcanClient, message: Message, args: Array<str
 		.addField(message.lang['ID'], Case.nr)
 		.addField(message.lang.type, Case.type)
 		.addField(message.lang.target, user?.tag)
-		.addField(message.lang.moderator, creator?.tag);
+		.addField(message.lang.moderator, creator?.tag)
+		.setTimestamp();
 	message.channel.send(embed);
 }
 export const help = {
@@ -24,5 +25,5 @@ export const help = {
 	descriptionpl: 'Sprawdź informacje o karze',
 	aliases: ['punishments'],
 	category: 'Tools', // Tools, moderation, 4fun, dev
-	perm: 'KICK_MEMBERS' // user, admin, mod, tester, dev
+	perm: 'KICK_MEMBERS', // user, admin, mod, tester, dev
 };

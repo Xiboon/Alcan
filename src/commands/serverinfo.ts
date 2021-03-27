@@ -16,9 +16,9 @@ export async function run(client: AlcanClient, message: Message, args: Array<str
 		.addField(message.lang.fields[2], message.guild.region)
 		.addField(message.lang.fields[3], message.guild.memberCount)
 		.addField(message.lang.fields[4], message.guild.channels.cache.size)
+		.setTimestamp()
 		.addField(message.lang.fields[5], message.guild.roles.cache.size);
-	if (message.guild.vanityURLCode)
-		embed.addField(message.lang.fields[6], message.guild.vanityURLCode);
+	if (message.guild.vanityURLCode) embed.addField(message.lang.fields[6], message.guild.vanityURLCode);
 	message.channel.send(embed);
 }
 
@@ -28,5 +28,5 @@ export const help = {
 	description: "Info about the guild you're in.",
 	descriptionpl: 'Informacje o serwerze',
 	category: 'Tools', // Tools, Moderation, 4fun, dev
-	perm: 'NULL' // user, admin, mod, tester, dev
+	perm: 'NULL', // user, admin, mod, tester, dev
 };

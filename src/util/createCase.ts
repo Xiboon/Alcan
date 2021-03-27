@@ -1,6 +1,6 @@
 import AlcanClient from '../classes/client';
 import { Guild, User } from 'discord.js';
-export async function run(
+export default async function createCase(
 	client: AlcanClient,
 	guild: Guild,
 	user: User,

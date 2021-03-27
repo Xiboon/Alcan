@@ -3,7 +3,7 @@ import { Message, MessageEmbed } from 'discord.js';
 export async function run(client: AlcanClient, message: Message, args: Array<string>) {
 	let user =
 		// @ts-ignore
-		message.mentions.users.first() || (await client.users.fetch(args[0]).catch(err => {}));
+		message.mentions.users.first() || (await client.users.fetch(args[0]).catch((err) => {}));
 	let reason = args.slice(1).join(' ') || message.lang.noreason;
 	if (!user) return message.channel.send(message.lang.nouser);
 	let casecreate = await client.functions.createCase(
@@ -22,7 +22,8 @@ export async function run(client: AlcanClient, message: Message, args: Array<str
 			.setTitle(message.lang.error1)
 			.setDescription(message.lang.error2)
 			.setColor(client.color)
-			.setFooter(client.footer);
+			.setFooter(client.footer)
+			.setTimestamp();
 		message.channel.send(error);
 	}
 	let banembed = new MessageEmbed()
@@ -31,7 +32,8 @@ export async function run(client: AlcanClient, message: Message, args: Array<str
 		.setTitle('Ban')
 		.addField(message.lang.ban, user.tag)
 		.addField(message.lang.ban2, message.author.tag)
-		.addField(message.lang.reason, reason);
+		.addField(message.lang.reason, reason)
+		.setTimestamp();
 	message.channel.send(banembed);
 	client.db.table('Case').insert(casecreate).run(client.conn);
 }
@@ -42,5 +44,5 @@ export const help = {
 	description: 'Ban a user in your guild.',
 	descriptionpl: 'Zbanuj użytkownika na swoim serwerze',
 	category: 'Moderation', // Tools, Moderation, 4fun, dev
-	perm: 'BAN_MEMBERS' // user, admin, mod, tester, dev
+	perm: 'BAN_MEMBERS', // user, admin, mod, tester, dev
 };
