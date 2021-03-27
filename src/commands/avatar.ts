@@ -1,7 +1,7 @@
 import AlcanClient from '../classes/client';
 import { Message, MessageEmbed } from 'discord.js';
 export async function run(client: AlcanClient, message: Message, args: Array<string>) {
-	await client.users.fetch(args[0]);
+	await client.users.fetch(args[0]).catch((err) => {});
 	const user = message.mentions.users.first() ?? client.users.cache.get(args[0]) ?? message.author;
 	const embed = new MessageEmbed()
 		.setTitle('Avatar')
